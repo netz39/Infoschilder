@@ -1,0 +1,35 @@
+name: LaTeX Build
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Build PDFs
+        uses: xu-cheng/latex-action@v3
+        with:
+          latexmk_shell_escape: true
+          extra_system_packages: "inkscape"
+          work_in_root_file_dir: true
+          root_file: |
+            cnc-fräse/cnc-fräse.tex
+
+      - name: Upload PDFs.
+        uses: actions/upload-artifact@v4
+        with:
+          name: PDFs
+          path: |
+            **/*.pdf
+            !**/svg-inkscape/**
+          retention-days: 5
+          if-no-files-found: error
