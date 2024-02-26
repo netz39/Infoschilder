@@ -1,0 +1,111 @@
+\documentclass{article}
+\usepackage{helvet}
+\usepackage{svg}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{setspace}
+\usepackage{caption}
+
+% Helvetica als Standardschriftart
+\renewcommand{\familydefault}{\sfdefault}
+
+% Seitenränder einstellen
+\geometry{
+	a4paper,
+	left=25mm,
+	right=25mm,
+	top=10mm,
+	bottom=10mm
+}
+
+% Zeilenabstand einstellen
+\setstretch{0.5} % Hier den gewünschten Zeilenabstand einstellen
+
+% Automatische Nummerierung von Bildunterschriften deaktivieren
+\captionsetup{labelformat=empty}
+
+% Seitennummerierung deaktivieren
+\pagestyle{empty}
+
+
+\begin{document}
+	
+	\noindent
+	\begin{minipage}{0.25\textwidth}
+		\section*{CNC-Fräse}
+	\end{minipage}
+	\begin{minipage}{0.75\textwidth}
+		\begin{flushright}
+			\includesvg[inkscapelatex=false, width=50pt]{../Symbole/netz39-logo-final.svg}
+		\end{flushright}	
+	\end{minipage}%
+	
+	\subsection*{Wichtige Informationen}
+	\begin{itemize}
+		\item \textbf{Modell:} Stepcraft 840/2
+		\item \textbf{Arbeitsbereich:} 600mm x 840mm x 140 mm
+		\item \textbf{Steuerung:} Arduino mit GBRL-Shield
+		\item \textbf{Spindelgeschwindigkeit:} max 20.000 U/min
+	\end{itemize}
+	
+	\subsection*{Workflow}
+	Detaillierte Infos sind auf der\textbf{ Wiki-Seite} zu finden!
+	\begin{itemize}
+		\item Fräse über Staubsauger (Werkzeugmodus) einschalten $\rightarrow$ Licht geht an, Kompressor knattert leise
+		\item NUC hochfahren, mit Estlecam den GCode vorbereiten
+		\item mit Candle homen und Nullpunkt einstellen
+		\item Werkstück auf Opferplatte befestigen
+		\item Fräser einspannen
+		\item sicherstellen, dass der Motorcontroller für die Spindel eingeschaltet ist
+		\item mit Candle Fräsvorgang starten
+	\end{itemize}
+	
+	\subsection*{Troubleshooting}
+	\begin{itemize}
+		\item \textbf{Problem:} Spindel läuft nicht an
+		\begin{itemize}
+			\item \textit{Lösung:}
+			\begin{itemize}
+				\item Fräsmotor-Controller eingeschaltet?
+				\item Staubsauger auf Werkzeugmodus?
+			\end{itemize}
+		\end{itemize}
+	\end{itemize}
+	
+	\subsection*{Discord-Channel}
+		\colorbox{gray!30}{\texttt{\#werkzeuge}}
+	
+	\subsection*{Links}
+	\begin{center}
+		
+		\renewcommand{\arraystretch}{2.0}
+		\begin{tabular}{|c|c|}
+			\hline
+			Wiki-Seite: & Fräse schmieren: \\
+			\includesvg[inkscapelatex=false, width=0.2\linewidth]{wiki-fräse.svg} & \includesvg[inkscapelatex=false, width=0.2\linewidth]{yt-fräse-schmieren.svg} \\
+			https://wiki.netz39.de/internal:inventory:tools:stepcraft & https://youtu.be/meZG8agCek4 \\
+			\hline
+		\end{tabular}
+	\end{center}
+	
+	\subsection*{Arbeitsschutz}
+	\begin{figure}[h]
+		\centering
+		\begin{minipage}{0.33\textwidth}
+			\centering
+			\includesvg[inkscapelatex=false, width=0.65\linewidth]{../Symbole/DIN_4844-2_D-M018.svg}
+			\caption*{Einweisung nötig!}
+		\end{minipage}%
+		\begin{minipage}{0.33\textwidth}
+			\centering
+			\includesvg[inkscapelatex=false, width=0.65\linewidth]{../Symbole/DIN_4844-2_D-M003.svg}
+			\caption*{Gehörschutz tragen!}
+		\end{minipage}
+		\begin{minipage}{0.33\textwidth}
+			\centering
+			\includesvg[inkscapelatex=false, width=0.65\linewidth]{../Symbole/D-W027_Warnung_vor_Handverletzungen.svg}
+			\caption*{\mbox{Vorsicht vor rotierendes Werkzeug}, keine Handschuhe tragen!}
+		\end{minipage}
+	\end{figure}
+	
+\end{document}
