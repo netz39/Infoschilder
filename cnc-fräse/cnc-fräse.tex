@@ -1,5 +1,10 @@
 \documentclass{article}
+
 \usepackage{helvet}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[ngerman]{babel}
+
 \usepackage{svg}
 \usepackage{graphicx}
 \usepackage{geometry}
@@ -48,64 +53,74 @@
 		\item \textbf{Spindelgeschwindigkeit:} max 20.000 U/min
 	\end{itemize}
 	
+	\noindent\dotfill
 	\subsection*{Workflow}
-	Detaillierte Infos sind auf der\textbf{ Wiki-Seite} zu finden!
+	Detaillierte Infos sind auf der\textbf{ Wiki-Seite} zu finden! (Siehe QR-Code)
 	\begin{itemize}
 		\item Fräse über Staubsauger (Werkzeugmodus) einschalten $\rightarrow$ Licht geht an, Kompressor knattert leise
-		\item NUC hochfahren, mit Estlecam den GCode vorbereiten
-		\item mit Candle homen und Nullpunkt einstellen
-		\item Werkstück auf Opferplatte befestigen
+		\item NUC hochfahren, mit \texttt{Estlecam} den GCode vorbereiten
+		\item \texttt{Candle} starten, Verbindung zur Fräse herstellen, homen und Nullpunkt einstellen
+		\item Werkstück auf der Opferplatte befestigen
 		\item Fräser einspannen
 		\item sicherstellen, dass der Motorcontroller für die Spindel eingeschaltet ist
-		\item mit Candle Fräsvorgang starten
+		\item mit \texttt{Candle} GCode laden und Fräsvorgang starten
 	\end{itemize}
 	
+	\noindent\dotfill
 	\subsection*{Troubleshooting}
 	\begin{itemize}
 		\item \textbf{Problem:} Spindel läuft nicht an
 		\begin{itemize}
-			\item \textit{Lösung:}
+			\textit{Lösung:}
 			\begin{itemize}
-				\item Fräsmotor-Controller eingeschaltet?
-				\item Staubsauger auf Werkzeugmodus?
+				\item Fräsmotor-Controller einschalten
+				\item Staubsauger auf Werkzeugmodus stellen
 			\end{itemize}
 		\end{itemize}
 	\end{itemize}
 	
+	\noindent\dotfill
 	\subsection*{Discord-Channel}
 		\colorbox{gray!30}{\texttt{\#werkzeuge}}
+	\vspace{1em}\\
 	
+	\noindent\dotfill
 	\subsection*{Links}
-	\begin{center}
-		
-		\renewcommand{\arraystretch}{2.0}
-		\begin{tabular}{|c|c|}
-			\hline
-			Wiki-Seite: & Fräse schmieren: \\
-			\includesvg[inkscapelatex=false, width=0.2\linewidth]{wiki-fräse.svg} & \includesvg[inkscapelatex=false, width=0.2\linewidth]{yt-fräse-schmieren.svg} \\
-			https://wiki.netz39.de/internal:inventory:tools:stepcraft & https://youtu.be/meZG8agCek4 \\
-			\hline
-		\end{tabular}
-	\end{center}
-	
-	\subsection*{Arbeitsschutz}
-	\begin{figure}[h]
+	\begin{minipage}{0.45\textwidth}
 		\centering
+		Wiki-Seite:\\
+		\includesvg[inkscapelatex=false, width=0.5\linewidth]{wiki-fräse.svg}\\
+		https://wiki.netz39.de/internal:inventory:tools:stepcraft
+	\end{minipage}
+	\hfill
+	\begin{minipage}{0.45\textwidth}
+		\centering
+		Fräse schmieren:\\
+		\includesvg[inkscapelatex=false, width=0.5\linewidth]{yt-fräse-schmieren.svg} \\
+		https://youtu.be/meZG8agCek4 \\
+	\end{minipage}
+	\vspace{1em}
+	
+	\noindent\fbox{
+	\begin{minipage}{\textwidth}
+		\centering	
+		\subsection*{Arbeitsschutz}
 		\begin{minipage}{0.33\textwidth}
 			\centering
 			\includesvg[inkscapelatex=false, width=0.65\linewidth]{../Symbole/DIN_4844-2_D-M018.svg}
-			\caption*{Einweisung nötig!}
+			\captionof{figure}{Einweisung nötig!}
 		\end{minipage}%
 		\begin{minipage}{0.33\textwidth}
 			\centering
 			\includesvg[inkscapelatex=false, width=0.65\linewidth]{../Symbole/DIN_4844-2_D-M003.svg}
-			\caption*{Gehörschutz tragen!}
+			\captionof{figure}{Gehörschutz tragen!}
 		\end{minipage}
 		\begin{minipage}{0.33\textwidth}
 			\centering
 			\includesvg[inkscapelatex=false, width=0.65\linewidth]{../Symbole/D-W027_Warnung_vor_Handverletzungen.svg}
-			\caption*{\mbox{Vorsicht vor rotierendes Werkzeug}, keine Handschuhe tragen!}
+			\captionof{figure}{\mbox{Vorsicht vor rotierendes Werkzeug}, keine Handschuhe tragen!}
 		\end{minipage}
-	\end{figure}
+	\end{minipage}
+	}
 	
 \end{document}
