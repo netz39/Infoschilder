@@ -1,4 +1,4 @@
 # Infoschilder
 Beinhaltet die Infoschilder, die im Space hängen.
 
-* Nutzt Icons von [Flaticon.com](https://www.flaticon.com)
+* Dieses Projekt nutzt Icons von [Flaticon.com](https://www.flaticon.com)
