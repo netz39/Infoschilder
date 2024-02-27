@@ -1,0 +1,100 @@
+\documentclass[a5paper]{article}
+
+\usepackage{helvet}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[ngerman]{babel}
+
+\usepackage{svg}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{setspace}
+\usepackage{caption}
+
+\usepackage[fontsize=8pt]{fontsize}
+
+% Helvetica als Standardschriftart
+\renewcommand{\familydefault}{\sfdefault}
+
+% Seitenränder einstellen
+\geometry{
+	a5paper,
+	left=12mm,
+	right=12mm,
+	top=5mm,
+	bottom=5mm
+}
+
+% Zeilenabstand einstellen
+\setstretch{0.5} % Hier den gewünschten Zeilenabstand einstellen
+
+% Automatische Nummerierung von Bildunterschriften deaktivieren
+\captionsetup{labelformat=empty}
+
+% Seitennummerierung deaktivieren
+\pagestyle{empty}
+
+
+\begin{document}
+	
+	\noindent
+	\begin{minipage}{0.25\textwidth}
+		\section*{Lötarbeitsplatz}
+	\end{minipage}
+	\hfill	
+	\begin{minipage}{0.1\textwidth}
+			\includesvg[inkscapelatex=false, width=\textwidth]{../Symbole/netz39-logo-final.svg}	
+	\end{minipage}%
+	
+	\subsection*{Wichtige Informationen}
+	\begin{itemize}
+		\item \textbf{Lötstation:} \texttt{JBC CD2E020}
+		\item \textbf{mobile Lötkolben:} \texttt{PINECIL v1 und v2}
+		\item \textbf{Entlötstation:} \texttt{PACE ST 115 Basisstation und SX-70 Kolben}
+		\item \textbf{Lötdampfabsaugung:} \texttt{qubo Fume Extraction Unit}
+	\end{itemize}
+	
+	\noindent\dotfill
+	\subsection*{Ansprechpartner}
+	Discord-Channel: \colorbox{gray!30}{\texttt{\#werkzeuge}}
+	\vspace{1em}\\
+	
+	\noindent\dotfill
+	\subsection*{Workflow}
+	\begin{itemize}
+	    \item Stromversorgung des Arbeitsplatzes über die Verteilerleiste einschalten\\ (auf der rechten Seite links neben der Entlötstation)
+	    \item ggf. Arbeitsplatzbeleuchtung aus dem Standby wecken (geht nach 45min Inaktivität aus)
+	\end{itemize}
+	
+		
+	\noindent\dotfill
+	\subsection*{Links}
+	\begin{center}
+		\begin{minipage}{0.6\textwidth}
+			\centering
+			Wiki-Seite:\\[0.5em]
+			\includesvg[inkscapelatex=false, width=0.5\textwidth]{wiki-lötarbeitsplatz.svg}\\[0.5em]
+			https://wiki.netz39.de/internal:inventory:tools:loetarbeitsplatz
+		\end{minipage}
+	\end{center}
+	
+	\vspace{1em}
+	
+	\noindent\fbox{
+	\begin{minipage}{\textwidth}
+		\centering	
+		\subsection*{Arbeitsschutz}
+		\begin{minipage}{0.33\textwidth}
+			\centering
+			\includesvg[inkscapelatex=false, width=0.65\linewidth]{../Symbole/DIN_4844-2_D-M018.svg}
+			\captionof{figure}{Einweisung nötig}
+		\end{minipage}%
+		\begin{minipage}{0.33\textwidth}
+			\centering
+			\includesvg[inkscapelatex=false, width=0.75\linewidth]{../Symbole/D-W027_Warnung_vor_Handverletzungen.svg}
+			\captionof{figure}{Vorsicht vor heißen Werkzeugen}
+		\end{minipage}
+	\end{minipage}
+	}
+	
+\end{document}
