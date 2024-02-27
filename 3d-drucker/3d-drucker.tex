@@ -1,0 +1,133 @@
+\documentclass{article}
+
+\usepackage{helvet}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[ngerman]{babel}
+
+\usepackage{svg}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{setspace}
+\usepackage{caption}
+
+% Helvetica als Standardschriftart
+\renewcommand{\familydefault}{\sfdefault}
+
+% Seitenränder einstellen
+\geometry{
+	a4paper,
+	left=25mm,
+	right=25mm,
+	top=10mm,
+	bottom=10mm
+}
+
+% Zeilenabstand einstellen
+\setstretch{0.5} % Hier den gewünschten Zeilenabstand einstellen
+
+% Automatische Nummerierung von Bildunterschriften deaktivieren
+\captionsetup{labelformat=empty}
+
+% Seitennummerierung deaktivieren
+\pagestyle{empty}
+
+
+\begin{document}
+	
+	\noindent
+	\begin{minipage}{0.25\textwidth}
+		\section*{3D-Drucker}
+	\end{minipage}
+	\hfill
+	\begin{minipage}{0.1\textwidth}
+		\includegraphics[width=\textwidth]{3d-printing.png}
+	\end{minipage}
+	\hspace{2em}	
+	\begin{minipage}{0.1\textwidth}
+			\includesvg[inkscapelatex=false, width=\textwidth]{../Symbole/netz39-logo-final.svg}	
+	\end{minipage}%
+	
+	\subsection*{Wichtige Informationen}
+	\begin{itemize}
+		\item \textbf{Modelle:}
+		\begin{itemize}
+			\item Delta-Drucker \texttt{AnyCubic Kossel Linear Plus} (230 × 230 × 300 mm)
+			\item \texttt{Tevo Tarantula} (220 x 280 x 186mm)
+		\end{itemize}
+		\item \textbf{Druckerserver:} Repetier-Server
+	\end{itemize}
+	
+		\noindent\dotfill
+	\subsection*{Ansprechpartner}
+	Discord-Channel: \colorbox{gray!30}{\texttt{\#3d-druck}}
+	\vspace{0.5em}\\
+	
+	\noindent\dotfill
+	\subsection*{Workflow}
+	Detaillierte Infos sind auf der\textbf{ Wiki-Seite} zu finden! (Siehe QR-Code)
+	\begin{itemize}
+		\item Verteilerleiste einschalten, ggf. Stromschalter am Drucker einlegen
+		\item GCode vorbereiten
+		\item GCode über Repetier-Server an Drucker schicken
+		\item Druck überwachen
+	\end{itemize}	
+	
+	\noindent\dotfill
+	\subsection*{Links}
+	\begin{minipage}{0.4\textwidth}
+		\centering
+		Wiki-Seite:\\[0.5em]
+		\includesvg[inkscapelatex=false, width=0.5\linewidth]{wiki-3d-drucker.svg}\\[0.5em]
+		https://wiki.netz39.de/internal:inventory:tools:3d\_printer\\
+		[0.5em]
+	\end{minipage}
+	\hfill
+	\begin{minipage}{0.4\textwidth}
+		\centering
+		Repetier-Server:\\[0.5em]
+		\includesvg[inkscapelatex=false, width=0.5\linewidth]{repetier-server.svg}\\[0.5em]
+		repetier-server.local \\
+	\end{minipage}\\
+	
+	\noindent\dotfill\\
+	
+	\noindent \begin{minipage}{0.4\textwidth}
+		\centering
+		Throubleshooting von Make:\\[0.5em]
+		\includesvg[inkscapelatex=false, width=0.5\linewidth]{make-throubleshooting.svg}\\[0.5em]
+		https://makezine.com/article/digital-fabrication/3d-printing-workshop/the-best-3d-printing-troubleshooting-guide/\\
+		[0.5em]
+	\end{minipage}
+	\hfill
+	\begin{minipage}{0.4\textwidth}
+		\centering
+		Throubleshooting von Simplify3D:\\[0.5em]
+		\includesvg[inkscapelatex=false, width=0.5\linewidth]{simplify3d-throubleshooting.svg}\\[0.5em]
+		https://www.simplify3d.com/resources/print-quality-troubleshooting/ \\
+	\end{minipage}
+	\vspace{1em}
+	
+	\noindent\fbox{
+	\begin{minipage}{\textwidth}
+		\centering	
+		\subsection*{Arbeitsschutz}
+		\begin{minipage}{0.33\textwidth}
+			\centering
+			\includesvg[inkscapelatex=false, width=0.6\linewidth]{../Symbole/DIN_4844-2_D-M018.svg}
+			\captionof{figure}{Einweisung nötig!}
+		\end{minipage}%
+		\begin{minipage}{0.33\textwidth}
+			\centering
+			\includesvg[inkscapelatex=false, width=0.7\linewidth]{../Symbole/D-W027_Warnung_vor_Handverletzungen.svg}
+			\captionof{figure}{\mbox{Vorsicht vor heißem Extruder/Heizbett!}}
+		\end{minipage}
+	\end{minipage}
+	}
+	\vfill
+	\begin{center}
+		\color{darkgray}
+		Das 3D-Drucker Icon ist von Flaticon.com
+	\end{center}
+	
+\end{document}
